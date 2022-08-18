@@ -1,0 +1,8 @@
+1. 원격서버에서 tensorboard 실행
+$ tensorboard --logdir=[log path] --port 0000
+
+2. 로컬 터미널
+$ ssh -NfL localhost:0001:localhost:0002 user@원격서버
+
+3. 로컬 웹브라우저에서 tensorboard 실행
+http://localhost:0001

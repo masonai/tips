@@ -1,0 +1,37 @@
+# docker run
+docker run -it -v /raid/MES/check_spell/:/workspace/ --name check_spell --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=1 nvidia/cuda:11.4.0-cudnn8-runtime-ubuntu18.04 bash
+
+
+# docker env
+apt-get update
+apt-get install sudo
+sudo apt-get install vim
+
+sudo apt-get install python3 python3-pip
+apt-get update
+
+export LANGUAGE=ko
+apt-get install locales
+localedef -f UTF-8 -i ko_KR ko_KR.UTF-8
+locale-gen ko_KR.UTF-8
+export LC_ALL=ko_KR.UTF-8
+LC_ALL=ko_KR.UTF-8 bash
+
+alias python=python3
+alias pip=pip3
+
+pip install setuptools-rust
+pip install --upgrade pip
+
+torch==1.8.1+cu101 -f https://download.pytorch.org/whl/torch_stable.html
+hangul-utils==0.2
+tqdm==4.64.0
+tensorboard==2.9.1
+transformers==4.18.0
+
+
+# docker attach/detach
+docker detach: ctrl + p + q
+docker attach: docker attach [container id]
+docker log [container id]
+

@@ -1,4 +1,5 @@
 # docker run
+docker pull pytorch/pytorch:1.8.0-cuda11.1-cudnn8-devel
 docker run -it -v /raid/MES/check_spell/:/workspace/ --name check_spell --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=1 nvidia/cuda:11.4.0-cudnn8-runtime-ubuntu18.04 bash
 
 
